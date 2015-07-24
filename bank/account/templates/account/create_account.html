@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Account {% endblock %}
+{% block content %}
+	
+	<center>
+	<h1>Create Account</h1></center>
+	{% if user.is_authenticated %}
+	<div align='center'>
+		<table border='0'>
+		<td>
+		
+			<form method='POST' action='/account/create/'>
+				{% csrf_token %}   <!--security-->
+		   		{{ account_form.as_p }}
+				<input type='submit' value='save'/>
+			</form>
+		
+		</td>
+		</table>
+	</div>
+	{% else %}
+		<h2>You need to Login</h2>
+	{% endif %}
+	
+{% endblock %}

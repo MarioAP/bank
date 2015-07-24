@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Accounts</h2>
+	{% if user.is_authenticated %}
+	<a href='/account/create/'>Add Account</a>
+    <ul>
+	
+		{% for account in accounts %}
+			<li>{{account}}</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<h4><i>You need to <a href=''>Login</a></i></h4>
+	{% endif %}
+
+{% endblock %}

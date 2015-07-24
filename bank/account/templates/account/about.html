@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Accounts</h2>
+	{% if user.is_authenticated %}
+    <ul>
+		
+    	<li>This is our information about our Bank Account.</li><p>
+		<img src='/static/images/img_account.jpg/'>
+		
+    </ul>
+	{% else %}
+		<h2>You need to Login</h2>
+	{% endif %}
+{% endblock %}
